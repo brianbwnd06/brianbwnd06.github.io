@@ -6,6 +6,7 @@
     --kedua : #6cb3ca;
     --ketiga : #9ad4e7;
     --text-putih : rgb(255,255,255) ;
+    --text-putih-alt : rgb(223, 223, 223) ;
     --text : #272829 ;
     --text-alt : #818696;
     --nav : rgba(255,255,255,.5);
@@ -44,6 +45,7 @@ body.dark{
     --kedua : #6cb3ca;
     --ketiga : #9ad4e7;
     --text-putih : rgb(255,255,255) ;
+    --text-putih-alt : rgb(223, 223, 223) ;
     --text : #fcfcfc ;
     --text-alt : #c3c9db;
     --nav : rgb(26, 42, 56);
@@ -502,12 +504,52 @@ nav .ham-menu{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     gap: 30px;
     margin-top: 30px;
     width: 100%;
 }
+.contact-content .left{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 40%;
+}
+.contact-content .left .card{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--kedua);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 15px var(--shadow-1);
+}
+.contact-content .left .card i{
+    font-size: 28px;
+    color: var(--text-putih);
+    background-color: var(--utama);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+.contact-content .left .card .title{
+    color: var(--text-putih-alt);
+    font-size: 14px;
+    font-family: Share Tech Mono ;
+}
+.contact-content .left .card .isi{
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-putih);
 
+}
+.contact-content .right{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 .contact-content .heading{
     display: flex;
     flex-direction: column;
@@ -530,7 +572,7 @@ nav .ham-menu{
     display: flex;
     flex-direction: column;
     gap: 15px;
-    width: 60%;
+    width: 100%;
 }
 .contact-content form .input-box{
     display: flex;
