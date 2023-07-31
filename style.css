@@ -720,7 +720,10 @@ footer p span{
     font-size: 14px;
 }
 
-@media screen and (max-width : 1000px) {
+@media screen and (max-width :990px) {
+    body{
+        width: 95vw;
+    }
     h1{
         font-size: 40px;
     }
