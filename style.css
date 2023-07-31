@@ -504,7 +504,7 @@ nav .ham-menu{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 50px;
     margin-top: 30px;
     width: 100%;
 }
