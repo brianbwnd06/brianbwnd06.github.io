@@ -67,18 +67,19 @@ body::before{
     display: none;
 }
 nav{
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 70px;
-    background-color: var(--nav);
     height: 80px;
     z-index: 999;
-    backdrop-filter: blur(5px);
-    width: 100;
+    /* background-color: var(--nav);
+    backdrop-filter: blur(5px); */
+    background-color: var(--body);
+    width: 100vw;
 }
 nav .logo{
     font-weight: 600;
@@ -139,13 +140,13 @@ nav .ham-menu{
     position: relative;
     width: 100%;
     background-color: var(--body);
+    margin-top: 60px;
 }
 .container .section{
     width: 100%;
     padding: 80px 70px 20px 70px;
     min-height: 70vh;
-    /* position: sticky;
-    top: 100px;   */
+
     background-color: var(--body);
     backdrop-filter: blur(20px);
     z-index: 3;
@@ -720,41 +721,21 @@ footer p span{
 }
 
 @media screen and (max-width : 1000px) {
-
-    /* body::before{
-        content: "Website ini Belum Tersedia Versi Mobile @__brayen";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: var(--utama);
-        color: var(--text-putih);
-        max-width: 350px;
-        font-size: 20px;
-        line-height: 1.1;
-        text-align: center;
-        padding: 10px;
-        font-family: Share Tech Mono;
-        box-shadow: 7px 7px 0 3px var(--ketiga);
-        display: block;
-    }
-    nav, .container{
-        display: none;
-    } */
     h1{
         font-size: 40px;
     }
     nav{
         padding: 0 20px;
-        width: 100%;
+        width: 100vw;
+        height: 60px;
     }
   
     nav .logo{
         position: relative;
         z-index: 999;
     }
-    nav ul{
-        position: absolute;
+    nav .nav-menu{
+        position: fixed;
         top: 50px;
         flex-direction: column;
         height: 100vh;
@@ -810,17 +791,15 @@ footer p span{
     }
     .section.hero{
         flex-direction: column-reverse;
-        height: 90vh;
+        height: 95vh;
         align-items: center;
         justify-content: start;
-        gap: 70px;
+        gap: 30px;
     }
     .container .hero .left{
         display: flex;
         flex-direction: column;
-        line-height: 1.2;
-        margin-top: 80px;
-    
+        line-height: 1.2;    
     }
     .container .hero .left .hello{
         font-size: 18px;
@@ -832,11 +811,12 @@ footer p span{
     }
 
     .section.hero .right .foto{
-        transform: translateY(40px) !important;
+        transform: translateY(0px) !important;
     }
     .section.hero .right .foto img{
         width: 250px !important;
         transform: translateX(0px) !important;
+        filter: drop-shadow(0px 10px 20px #2a82a0a1 );
     }
     /* about */
     .about-content{
@@ -844,18 +824,22 @@ footer p span{
         margin-top:20px;
     }
     .about-content .left{
-        right: -75px;
+        right: -25px;
         position: absolute;
+        z-index: 2;
+        top: 30px;
     }
     .about-content .left img{
         transform: scaleX(-1);
-        width: 300px;
+        width: 160px;
       
     }
     .about-content .right{
         width: 100%;
         transform: translateY(15px);
         padding-right: 20%;
+        position: relative;
+        z-index: 9;
     }
     .about-content .right p{
         font-size: 12px;
@@ -879,6 +863,40 @@ footer p span{
         color: var(--text-putih);
         box-shadow: 0 0 10px var(--shadow-1);
         font-size: 18px;
+    }
+    /* SKILLS */
+    .skil-content{
+        flex-direction: row-reverse;
+        position: relative;
+      
+    }
+    .skil-content .right{
+        position: absolute;
+        left: -8%;
+        top: -30px;
+    }
+    .skil-content .right img{
+        width: 130px;
+    }
+    .skil-content .left .text{
+        font-size: 12px;
+        padding-left: 80px;
+        text-align: right;
+    }
+    .skil-content .left .tab-wrapper{
+        margin-top: 50px;
+    }
+
+    /* contact */
+    .contact-content{
+        flex-direction: column;
+    }
+    .contact-content .left,
+    .contact-content .right{
+        width: 100%;
+    }
+    .contact-content .right .input-box{
+        flex-direction: column;
     }
 }
 

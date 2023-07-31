@@ -2,6 +2,8 @@ $(document).ready(function () {
     $('.nav-list-menu').click(function(){
       $('.nav-list-menu').removeClass('active');
       $(this).addClass('active');
+      $('.nav-menu').removeClass('active');
+      $('.hamIcon').toggleClass('fa-xmark');
     })
 
     $('.ham-menu').click(function(){
