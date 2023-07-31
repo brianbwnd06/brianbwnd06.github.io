@@ -668,7 +668,7 @@ footer p span{
 @media screen and (max-width : 1000px) {
 
     body::before{
-        content: "Website ini Belum Tersedia Versi Mobile";
+        content: "Website ini Belum Tersedia Versi Mobile @__brayen";
         position: absolute;
         top: 50%;
         left: 50%;
@@ -676,7 +676,7 @@ footer p span{
         background-color: var(--utama);
         color: var(--text-putih);
         max-width: 350px;
-        font-size: 25px;
+        font-size: 20px;
         line-height: 1.1;
         text-align: center;
         padding: 10px;
