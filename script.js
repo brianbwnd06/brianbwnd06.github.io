@@ -1,4 +1,9 @@
 $(document).ready(function () {
+    $('.nav-list-menu').click(function(){
+      $('.nav-list-menu').removeClass('active');
+      $(this).addClass('active');
+    })
+
     $('.ham-menu').click(function(){
         $('.nav-menu').toggleClass('active');
         $('.hamIcon').toggleClass('fa-xmark');
@@ -46,6 +51,7 @@ $(document).ready(function () {
       $('.tab-video').show();
       $('.tab-uiux, .tab-web').hide()
     })
+    
 
 });
 
