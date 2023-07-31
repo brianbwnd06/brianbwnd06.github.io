@@ -61,6 +61,9 @@ body{
     width: 100vw;
     overflow-x: hidden;
 }
+body::before{
+    display: none;
+}
 nav{
     position: sticky;
     top: 0;
@@ -662,14 +665,36 @@ footer p span{
     font-size: 14px;
 }
 
-@media screen and (max-width : 756px) {
+@media screen and (max-width : 1000px) {
+
+    body::before{
+        content: "Website ini Belum Tersedia Versi Mobile";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: var(--utama);
+        color: var(--text-putih);
+        max-width: 350px;
+        font-size: 25px;
+        line-height: 1.1;
+        text-align: center;
+        padding: 10px;
+        font-family: Share Tech Mono;
+        box-shadow: 7px 7px 0 3px var(--ketiga);
+        display: block;
+    }
     h1{
         font-size: 40px;
     }
     nav{
         padding: 0 20px;
         width: 100%;
+        display: none;
 
+    }
+    .container{
+        display: none;
     }
     nav .logo{
         position: relative;
