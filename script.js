@@ -51,7 +51,10 @@ $(document).ready(function () {
 
 ScrollReveal().reveal('.on-scroll',{delay : 100,duration:500, easing : 'ease-out', interval : 100, origin : 'bottom', scale : 0.9});
 
-
+function emailValidasi(email){
+  var emailPatern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return emailPatern.test(email);
+}
 
 
 const namaDepan = document.getElementById('i-namadepan');
@@ -61,11 +64,21 @@ const telepon = document.getElementById('i-telepon');
 const pesan = document.getElementById('i-pesan');
 const submit = document.getElementsByClassName('form-contact')[0];
 
+var inputNumber = telepon;
+
+inputNumber.addEventListener('input', function(){
+  var teleponValue = inputNumber.value; 
+  var filterAngka = teleponValue.replace(/[^0-9]/g,'');
+  if(filterAngka !== teleponValue){
+    inputNumber.value = filterAngka;
+  }
+})
+
 submit.addEventListener('submit', (e)=>{
   e.preventDefault();
-
-
-  let ebody =`
+  var valEmail = email.value;
+  if(emailValidasi(valEmail)){
+    let ebody =`
   <b>Nama :</b> ${namaDepan.value}&nbsp;${namaBelakang.value}
   <br>
   <b>Email :</b> ${email.value}
@@ -74,12 +87,7 @@ submit.addEventListener('submit', (e)=>{
   <br>
   <br>
   <b>Pesan : </b> <br> ${pesan.value}
-  
   `
-  
-  
-
-
   Email.send({
     SecureToken : "069c0fde-98cc-421d-b5c7-21fe46c9c696",
     To : 'bwndbrayen06@gmail.com',
@@ -101,5 +109,16 @@ submit.addEventListener('submit', (e)=>{
         pesan.value = "";
       });
   });
+  }else{
+    Swal.fire({
+      position: 'center',
+      icon: 'error',
+      title: 'Email tidak Valid',
+      showConfirmButton: false,
+      timer: 1000
+      })
+  }
+
+ 
 })
 

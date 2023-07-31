@@ -346,14 +346,15 @@
                         <span>Email</span>
                     </div>
                     <div class="input-grup on-scroll">
-                        <input type="text" required id="i-telepon" autocomplete="off">
+                        <input type="text" required id="i-telepon" autocomplete="off" pattern="^\d+$"
+                            title="Input harus berupa angka (0-9) saja.">
                         <span>Telepon / WhatsApp</span>
                     </div>
                     <div class="input-grup pesan on-scroll">
                         <textarea cols="30" rows="5" required id="i-pesan"></textarea>
                         <span>Pesan</span>
                     </div>
-                    <button class="on-scroll" type="submit" id="submit">Kirim</button>
+                    <button class="on-scroll" type="submit" id="submit-form">Kirim</button>
                 </form>
 
             </div>
