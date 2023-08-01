@@ -990,9 +990,9 @@ footer p span{
     }
 }
 
-@media screen and (min-width : 1440px) {
+@media screen and (min-width : 1540px) {
     nav, .container .section{
-        padding: 0 380px;
+        padding: 0 250px;
     }
     .side-btn.on{
         right: 30px;
