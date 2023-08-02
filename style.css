@@ -445,6 +445,13 @@ nav .ham-menu{
     max-height: 250px;
     overflow: auto;
 }
+.project-content .box-project .detail .desk::-webkit-scrollbar{
+    width: 5px;
+    background-color: var(--ketiga);
+}
+.project-content .box-project .detail .desk::-webkit-scrollbar-thumb{
+    background-color: var(--kedua);
+}
 .project-content .box-project .detail .stak{
     display: flex;
     align-items: center;
