@@ -58,14 +58,12 @@ body.dark{
 
 
 body{
+    width: 100vw;
     position: relative;
     min-height: 100vh;
-    width: 100vw;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
-body::before{
-    display: none;
-}
+
 nav{
     position: fixed;
     top: 0;
@@ -76,10 +74,9 @@ nav{
     padding: 0 70px;
     height: 80px;
     z-index: 999;
-    /* background-color: var(--nav);
-    backdrop-filter: blur(5px); */
     background-color: var(--body);
     width: 100vw;
+    
 }
 nav .logo{
     font-weight: 600;
@@ -144,24 +141,12 @@ nav .ham-menu{
 }
 .container .section{
     width: 100%;
-    padding: 80px 70px 20px 70px;
-    min-height: 70vh;
-
+    padding: 80px 70px 70px 70px;
+    height: max-content ;
     background-color: var(--body);
-    backdrop-filter: blur(20px);
     z-index: 3;
-}
-/* .container .section::before{
-    content: '';
-    width: 100%;
-    height: 170px;
-    position: absolute;
-    top: -170px;
-    left: 0;
-    background: var(--section-top);
-    z-index: -1;
 
-} */
+}
 .container .section .section-title{
     color: var(--utama);
     font-family: Share Tech Mono;
@@ -399,15 +384,15 @@ nav .ham-menu{
 /* Project */
 .project-content{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(850px, 1fr));
-    grid-gap: 100px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 50px;
     margin-top: 50px;
     padding-bottom: 100px;
 }
 .project-content .box-project{
     display: flex;
     gap: 20px;
-    height: 350px;
+    height: max-content;
     width: 100%;
 }
 .project-content .box-project .thumb{
@@ -434,6 +419,7 @@ nav .ham-menu{
     flex-direction: column;
     gap: 10px;
     width: 40%;
+
 }
 .project-content .box-project .detail .heading{
     color: var(--text-alt);
@@ -456,6 +442,8 @@ nav .ham-menu{
     text-align: right;
     font-size: 14px;
     color: var(--text-putih);
+    max-height: 250px;
+    overflow: auto;
 }
 .project-content .box-project .detail .stak{
     display: flex;
@@ -720,10 +708,7 @@ footer p span{
     font-size: 14px;
 }
 
-@media screen and (max-width :990px) {
-    body{
-        width: 100vw;
-    }
+@media screen and (max-width :790px) {
     h1{
         font-size: 40px;
     }
@@ -731,6 +716,8 @@ footer p span{
         padding: 0 20px;
         width: 100vw;
         height: 60px;
+
+        overflow: hidden;
     }
   
     nav .logo{
@@ -752,7 +739,7 @@ footer p span{
         transition: .5s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
     nav ul.active{
-        right: 0;
+        right: 0%;
     }
     nav ul li a{
         color: var(--text-putih);
@@ -780,21 +767,13 @@ footer p span{
 
     /* ================= Main Content ================== */
     /* Hero */
-    .section{
-        padding: 0 20px !important;
-        position: relative !important;
-        height: max-content !important;
-        padding-bottom: 80px !important;
-        padding-top: 60px !important;
 
+    .container .section{
+        padding: 70px 20px;
     }
-    .container .section::before{
-        display: none;
-    
-    }
-    .section.hero{
+    .container .hero{
         flex-direction: column-reverse;
-        height: 95vh;
+        height: 70vh;
         align-items: center;
         justify-content: start;
         gap: 30px;
@@ -802,7 +781,8 @@ footer p span{
     .container .hero .left{
         display: flex;
         flex-direction: column;
-        line-height: 1.2;    
+        line-height: 1.2;   
+        margin-top: 7%; 
     }
     .container .hero .left .hello{
         font-size: 18px;
@@ -814,7 +794,7 @@ footer p span{
     }
 
     .section.hero .right .foto{
-        transform: translateY(0px) !important;
+        transform: translateY(5%) !important;
     }
     .section.hero .right .foto img{
         width: 250px !important;
@@ -824,26 +804,27 @@ footer p span{
     /* about */
     .about-content{
         flex-direction: row-reverse;
-        margin-top:20px;
+        margin-top:0px;
         position: relative;
     }
     .about-content .left{
         position: absolute;
-        top: 0 ;
-        right: -45px;
+        top: 5%;
+        right: -20px;
         height: 100%;
     }
     .about-content .left img{
-        transform: scaleX(-1);
+        transform: scaleX(-1) translateY(-20px);
         width: 160px;
         right: -25px;
         z-index: 2;
+        filter: none;
   
     }
     .about-content .right{
         width: 100%;
-        transform: translateY(15px);
-        padding-right: 17%;
+        transform: translateY(30px);
+        padding-right: 25%;
         position: relative;
         z-index: 9;
     }
@@ -877,25 +858,20 @@ footer p span{
       
     }
     .skil-content .right{
-        position: absolute;
-        left: -8%;
-        top: -30px;
-    }
-    .skil-content .right img{
-        width: 130px;
+
+        display: none;
     }
     .skil-content .left .text{
         font-size: 12px;
-        padding-left: 80px;
-        text-align: right;
+        text-align: center;
     }
     .skil-content .left .tab-wrapper{
-        margin-top: 50px;
+        margin-top: 20px;
     }
 
     /* Project */
     .project-content{
-        grid-template-columns: repeat(1 ,1fr);
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         padding-bottom: 0px;
         grid-gap: 20px;
     }
