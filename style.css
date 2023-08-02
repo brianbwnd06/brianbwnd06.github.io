@@ -32,12 +32,19 @@ li{
 h1{
     font-size: 55px;
 }
+h2{
+    font-size: 25px !important;
+}
 p{
     font-size: 16px;
 }
+
 ::selection{
     background-color: var(--utama);
     color: var(--text-putih);
+}
+.swal2-modal{
+    width: 300px !important;
 }
 body.dark{
     --body : rgb(26, 42, 56) ;
@@ -504,6 +511,9 @@ nav .ham-menu{
 
 
 /* Contact */
+#contact{
+    padding-bottom: 150px;
+}
 .contact-content{
     display: flex;
     align-items: center;

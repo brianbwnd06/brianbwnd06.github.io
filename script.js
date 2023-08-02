@@ -123,7 +123,7 @@ submit.addEventListener('submit', (e)=>{
       icon: 'error',
       title: 'Email tidak Valid',
       showConfirmButton: false,
-      timer: 1000
+      timer: 10000
       })
   }
 
