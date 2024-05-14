@@ -170,7 +170,7 @@ nav .ham-menu{
     display: flex;
     min-height: 85vh ;
     align-items: center;
-    justify-content : between;
+    justify-content: space-between;
     gap: 10px;
    
 }
