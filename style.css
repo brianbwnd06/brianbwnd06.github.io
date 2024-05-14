@@ -169,8 +169,8 @@ nav .ham-menu{
 .container .hero{
     display: flex;
     min-height: 85vh ;
-    display: flex;
     align-items: center;
+    justify-content : between;
     gap: 10px;
    
 }
